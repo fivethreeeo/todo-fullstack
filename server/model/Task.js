@@ -3,14 +3,9 @@ const Schema = mongoose.Schema
 
 const taskSchema = new Schema(
   {
-    task: {
-      type: String,
-      required: true,
-    },
-    isCompleted: {
-      type: Boolean,
-      require: true,
-    },
+    task: { type: String, required: true },
+    isCompleted: { type: Boolean, require: true },
+    author: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
   },
   { timestamps: true }
 )
